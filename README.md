@@ -1,6 +1,6 @@
-# ether-proxy
+# vapor-proxy
 
-Ethereum mining proxy with web-interface.
+Vapory mining proxy with web-interface.
 
 **Proxy feature list:**
 
@@ -9,14 +9,14 @@ Ethereum mining proxy with web-interface.
 * Easy detection of sick rigs
 * Daemon failover list
 
-![Demo](https://raw.githubusercontent.com/sammy007/ether-proxy/master/proxy.png)
+![Demo](https://raw.githubusercontent.com/sammy007/vapor-proxy/master/proxy.png)
 
 ### Building on Linux
 
 Dependencies:
 
   * go >= 1.4
-  * geth
+  * gvap
 
 Export GOPATH:
 
@@ -24,22 +24,22 @@ Export GOPATH:
 
 Install required packages:
 
-    go get github.com/ethereum/ethash
-    go get github.com/ethereum/go-ethereum/common
+    go get github.com/vaporyco/vapash
+    go get github.com/vaporyco/go-vapory/common
     go get github.com/goji/httpauth
     go get github.com/gorilla/mux
     go get github.com/yvasiyarov/gorelic
 
 Compile:
 
-    go build -o ether-proxy main.go
+    go build -o vapor-proxy main.go
 
 ### Building on Windows
 
-Follow [this wiki paragraph](https://github.com/ethereum/go-ethereum/wiki/Installation-instructions-for-Windows#building-from-source) in order to prepare your environment.
+Follow [this wiki paragraph](https://github.com/vaporyco/go-vapory/wiki/Installation-instructions-for-Windows#building-from-source) in order to prepare your environment.
 Install required packages (look at Linux install guide above). Then compile:
 
-    go build -o ether-proxy.exe main.go
+    go build -o vapor-proxy.exe main.go
 
 ### Building on Mac OS X
 
@@ -60,33 +60,33 @@ Configuration is self-describing, just copy *config.example.json* to *config.jso
   {
     "pool": true,
     "name": "EuroHash.net",
-    "url": "http://eth-eu.eurohash.net:8888/miner/0xb85150eb365e7df0941f0cf08235f987ba91506a/proxy",
+    "url": "http://vap-eu.eurohash.net:8888/miner/0xb85150eb365e7df0941f0cf08235f987ba91506a/proxy",
     "timeout": "10s"
   },
   {
-    "name": "backup-geth",
+    "name": "backup-gvap",
     "url": "http://127.0.0.1:8545",
     "timeout": "10s"
   }
 ],
 ```
 
-In this example we specified [EuroHash.net](https://eurohash.net) mining pool as main mining target and a local geth node as backup for solo.
+In this example we specified [EuroHash.net](https://eurohash.net) mining pool as main mining target and a local gvap node as backup for solo.
 
-With <code>"submitHashrate": true|false</code> proxy will forward <code>eth_submitHashrate</code> requests to upstream.
+With <code>"submitHashrate": true|false</code> proxy will forward <code>vap_submitHashrate</code> requests to upstream.
 
 #### Running
 
-    ./ether-proxy config.json
+    ./vapor-proxy config.json
 
 #### Mining
 
-    ethminer -F http://x.x.x.x:8546/miner/5/gpu-rig -G
-    ethminer -F http://x.x.x.x:8546/miner/0.1/cpu-rig -C
+    vapminer -F http://x.x.x.x:8546/miner/5/gpu-rig -G
+    vapminer -F http://x.x.x.x:8546/miner/0.1/cpu-rig -C
 
 ### Pools that work with this proxy
 
-* [EuroHash.net](https://eurohash.net) EU Ethereum mining pool
+* [EuroHash.net](https://eurohash.net) EU Vapory mining pool
 * [SuprNova.cc](https://eth.suprnova.cc) SuprNova ETH Pool
 
 Pool owners, apply for listing here. PM me for implementation details.
@@ -102,11 +102,11 @@ Pool owners, apply for listing here. PM me for implementation details.
 
 ### Donations
 
-* **ETH**: [0xb85150eb365e7df0941f0cf08235f987ba91506a](https://etherchain.org/account/0xb85150eb365e7df0941f0cf08235f987ba91506a)
+* **ETH**: [0x5e7d4ab47b6f44d7ba5dc8777bd2fb6c9a1671b9](https://etherchain.org/account/0x5e7d4ab47b6f44d7ba5dc8777bd2fb6c9a1671b9)
 
-* **BTC**: [1PYqZATFuYAKS65dbzrGhkrvoN9au7WBj8](https://blockchain.info/address/1PYqZATFuYAKS65dbzrGhkrvoN9au7WBj8)
+* **BTC**: [1BEm4XLZTnSah5ZDmmfeeHjoa6TBriYNVk](https://blockchain.info/address/1BEm4XLZTnSah5ZDmmfeeHjoa6TBriYNVk)
 
-Thanks to a couple of dudes who donated some Ether to me, I believe, you can do the same.
+Thanks to a couple of dudes who donated some Vapor to me, I believe, you can do the same.
 
 ### License
 

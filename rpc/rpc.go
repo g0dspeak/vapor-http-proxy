@@ -54,7 +54,7 @@ func NewRPCClient(name, rawUrl, timeout string, pool bool) (*RPCClient, error) {
 func (r *RPCClient) GetWork() ([]string, error) {
 	params := []string{}
 
-	rpcResp, err := r.doPost(r.Url.String(), "eth_getWork", params)
+	rpcResp, err := r.doPost(r.Url.String(), "vap_getWork", params)
 	var reply []string
 	if err != nil {
 		return reply, err
@@ -69,7 +69,7 @@ func (r *RPCClient) GetWork() ([]string, error) {
 func (r *RPCClient) GetPendingBlock() (GetBlockReply, error) {
 	params := []interface{}{"pending", false}
 
-	rpcResp, err := r.doPost(r.Url.String(), "eth_getBlockByNumber", params)
+	rpcResp, err := r.doPost(r.Url.String(), "vap_getBlockByNumber", params)
 	var reply GetBlockReply
 	if err != nil {
 		return reply, err
@@ -82,7 +82,7 @@ func (r *RPCClient) GetPendingBlock() (GetBlockReply, error) {
 }
 
 func (r *RPCClient) SubmitBlock(params []string) (bool, error) {
-	rpcResp, err := r.doPost(r.Url.String(), "eth_submitWork", params)
+	rpcResp, err := r.doPost(r.Url.String(), "vap_submitWork", params)
 	var result bool
 	if err != nil {
 		return false, err
@@ -98,7 +98,7 @@ func (r *RPCClient) SubmitBlock(params []string) (bool, error) {
 }
 
 func (r *RPCClient) SubmitHashrate(params interface{}) (bool, error) {
-	rpcResp, err := r.doPost(r.Url.String(), "eth_submitHashrate", params)
+	rpcResp, err := r.doPost(r.Url.String(), "vap_submitHashrate", params)
 	var result bool
 	if err != nil {
 		return false, err

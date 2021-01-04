@@ -22,7 +22,7 @@
 		{
 			"pool": true,
 			"name": "EuroHash.net",
-			"url": "http://eth-eu.eurohash.net:8888/miner/0xb85150eb365e7df0941f0cf08235f987ba91506a/proxy",
+			"url": "http://vap-eu.eurohash.net:8888/miner/0xb85150eb365e7df0941f0cf08235f987ba91506a/proxy",
 			"timeout": "10s"
 		},
 		{
@@ -38,7 +38,7 @@
 	],
 
 	"newrelicEnabled": false,
-	"newrelicName": "MyEtherProxy",
+	"newrelicName": "MyVaporProxy",
 	"newrelicKey": "SECRET_KEY",
 	"newrelicVerbose": false
 }

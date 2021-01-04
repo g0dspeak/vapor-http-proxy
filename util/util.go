@@ -6,8 +6,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/math"
+	"github.com/vaporyco/go-vapory/common"
+	"github.com/vaporyco/go-vapory/common/math"
 )
 
 var pow256 = math.BigPow(2, 256)

@@ -10,11 +10,11 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/ethereum/ethash"
-	"github.com/ethereum/go-ethereum/common"
+	"github.com/vaporyco/vapash"
+	"github.com/vaporyco/go-vapory/common"
 )
 
-var hasher = ethash.New()
+var hasher = vapash.New()
 
 type Miner struct {
 	sync.RWMutex
