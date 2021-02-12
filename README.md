@@ -1,4 +1,4 @@
-# vapor-proxy
+# vapor-http-proxy
 
 Vapory mining proxy with web-interface.
 
@@ -9,7 +9,7 @@ Vapory mining proxy with web-interface.
 * Easy detection of sick rigs
 * Daemon failover list
 
-![Demo](https://raw.githubusercontent.com/sammy007/vapor-proxy/master/proxy.png)
+![Demo](https://raw.githubusercontent.com/vapory-mining/vapor-http-proxy/master/proxy.png)
 
 ### Building on Linux
 
@@ -32,14 +32,14 @@ Install required packages:
 
 Compile:
 
-    go build -o vapor-proxy main.go
+    go build -o vapor-http-proxy main.go
 
 ### Building on Windows
 
 Follow [this wiki paragraph](https://github.com/vaporyco/go-vapory/wiki/Installation-instructions-for-Windows#building-from-source) in order to prepare your environment.
 Install required packages (look at Linux install guide above). Then compile:
 
-    go build -o vapor-proxy.exe main.go
+    go build -o vapor-http-proxy.exe main.go
 
 ### Building on Mac OS X
 
@@ -59,8 +59,8 @@ Configuration is self-describing, just copy *config.example.json* to *config.jso
 "upstream": [
   {
     "pool": true,
-    "name": "EuroHash.net",
-    "url": "http://vap-eu.eurohash.net:8888/miner/0xb85150eb365e7df0941f0cf08235f987ba91506a/proxy",
+    "name": "vapory.org",
+    "url": "http://proxy.vapory.org:8888/miner/0xb85150eb365e7df0941f0cf08235f987ba91506a/proxy",
     "timeout": "10s"
   },
   {
@@ -77,7 +77,7 @@ With <code>"submitHashrate": true|false</code> proxy will forward <code>vap_subm
 
 #### Running
 
-    ./vapor-proxy config.json
+    ./vapor-http-proxy config.json
 
 #### Mining
 
@@ -86,8 +86,8 @@ With <code>"submitHashrate": true|false</code> proxy will forward <code>vap_subm
 
 ### Pools that work with this proxy
 
-* [EuroHash.net](https://eurohash.net) EU Vapory mining pool
-* [SuprNova.cc](https://eth.suprnova.cc) SuprNova ETH Pool
+* [Vapory.co](https://pool.vapory.co) Vapory.co Mining Pool
+* [Vapory.org](https://pool.vapory.org) Vapory.org Mining Pool
 
 Pool owners, apply for listing here. PM me for implementation details.
 
@@ -100,13 +100,6 @@ Pool owners, apply for listing here. PM me for implementation details.
 * Maybe add more stats
 * Maybe add charts
 
-### Donations
-
-* **ETH**: [0x5e7d4ab47b6f44d7ba5dc8777bd2fb6c9a1671b9](https://etherchain.org/account/0x5e7d4ab47b6f44d7ba5dc8777bd2fb6c9a1671b9)
-
-* **BTC**: [1BEm4XLZTnSah5ZDmmfeeHjoa6TBriYNVk](https://blockchain.info/address/1BEm4XLZTnSah5ZDmmfeeHjoa6TBriYNVk)
-
-Thanks to a couple of dudes who donated some Vapor to me, I believe, you can do the same.
 
 ### License
 
