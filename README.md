@@ -1,6 +1,6 @@
 # vapor-http-proxy
 
-Vapory mining proxy with web-interface.
+Vapory mining proxy with web-interface.  ![View it Live](https://proxy.vapory.org)
 
 **Proxy feature list:**
 
